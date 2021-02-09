@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int xorOperation(int n, int start) {
+
+        vector <int> vec;
+        
+        vec.reserve(n);
+
+        int res{0};
+        
+        for(int i{0}; i < n; i++) {
+            vec.push_back(start + 2 * i);
+            if(i) {
+                
+                if(i == 1) 
+                    res = vec.at(1) ^ vec.at(0);
+
+                else {
+                    res = res ^ vec.at(i);
+                    
+                }
+            }
+
+        }
+        
+        if(vec.size() == 1) return vec.at(0);
+
+        return res;
+    }
+};
