@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int balancedStringSplit(string s) {
+        int flagr{0}, flagl{0}, count{0};
+        
+        for(char ch: s) {
+            
+            if(ch == 'R')
+                flagr++;
+            else if(ch == 'L')
+                flagl++;
+            if(flagr == flagl) {
+                count++;
+                flagr = 0;
+                flagl = 0;
+            }
+        }
+        
+        return count;
+        
+    }
+};
