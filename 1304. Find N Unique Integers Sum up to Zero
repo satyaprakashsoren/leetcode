@@ -1,0 +1,16 @@
+class Solution {
+public:
+vector<int> sumZero(int n) {
+    int x = n/2 * (-1);
+    vector<int> res;
+    for(int i=0; i<n; i++){
+        if(i<n/2)    res.push_back(x);
+        else{
+            if(i==n/2 && n%2 == 0)    x=1;
+            res.push_back(x);
+        }
+        x++;
+    }
+    return res;
+}
+};

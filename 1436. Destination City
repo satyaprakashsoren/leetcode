@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string destCity(vector<vector<string>>& paths) {
+        
+        vector <string> present;
+        
+        string res;
+        
+        for(auto pair: paths)
+            present.push_back(pair.at(0));
+        
+        for(auto pair: paths) {
+            
+            string dest = pair.at(1);
+            auto it = find(present.begin(), present.end(), dest);
+            
+            if(it == present.end())
+                res = dest;
+            
+                
+        }
+        
+        return res;
+    }
+};
