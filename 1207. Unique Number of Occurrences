@@ -1,0 +1,45 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        
+        sort(arr.begin(), arr.end());
+        
+        int v{0};
+        
+        v = arr.at(0);
+        
+        int count{0};
+        
+        vector <int> occ;
+        
+        for(int i: arr) {
+            if(i == v)
+                count++;
+            else {
+                occ.push_back(count);
+                v = i;
+                count = 1;
+            }    
+        }
+        
+        occ.push_back(count);
+        
+        sort(occ.begin(), occ.end());
+        
+        int flag{0};
+        
+        for(int i{0}; i < occ.size() - 1; i++) {
+            if(occ[i] == occ[i + 1])
+                flag++;
+        }
+        
+        if(occ[0] == occ[1])
+            flag++;
+        
+        if(flag)
+            return false;
+        else
+            return true;
+        
+    }
+};
