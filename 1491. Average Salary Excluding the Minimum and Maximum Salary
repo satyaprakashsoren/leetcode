@@ -1,0 +1,19 @@
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        
+        sort(salary.begin(), salary.end());
+        double n{0.0};
+        n = salary.size();
+
+        double sum{0.0};
+
+        sum = accumulate(salary.begin() + 1, salary.end() - 1, 0.0);
+
+        double avg{0};
+
+        avg = sum/(n - 2);
+                         
+        return avg;
+    }
+};
