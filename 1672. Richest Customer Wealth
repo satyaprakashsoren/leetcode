@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+        int i{0}, j{0}, m{0}, n{0}, wealth{0}, temp{0};
+        
+        for(auto c: accounts) {
+            for(auto b: c) 
+                temp += b;
+            
+            if(temp > wealth)
+                wealth = temp;
+            
+            temp = 0;
+        }
+        
+        return wealth;
+    }
+};
