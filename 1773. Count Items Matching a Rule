@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int countMatches(vector<vector<string>>& items, string ruleKey, string ruleValue) {
+        
+        int category{0}, match{0};
+        
+        if(ruleKey == "type")
+            category = 0;
+        if(ruleKey == "color")
+            category = 1;
+        if(ruleKey == "name")
+            category = 2;
+        
+        for(auto el: items) 
+            if(el[category] == ruleValue)
+                match++;
+        
+        return match;
+    }
+};
