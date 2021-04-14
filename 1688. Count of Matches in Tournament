@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int numberOfMatches(int n) {
+        
+        int remaining_team{n}, matches{0};
+        
+        while(remaining_team != 1) {
+            if(remaining_team % 2) {
+                matches += (remaining_team - 1) / 2;
+                remaining_team = (remaining_team - 1) / 2 + 1;
+            }
+            
+            else {
+                matches += remaining_team / 2;
+                remaining_team = remaining_team / 2;
+            }
+        }
+        
+        return matches;
+        
+    }
+};
